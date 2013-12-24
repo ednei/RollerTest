@@ -5,6 +5,7 @@
                    displayName="Header Files"
                    projectFiles="true">
       <itemPath>Roller.h</itemPath>
+      <itemPath>unity_fixture.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ResourceFiles"
                    displayName="Resource Files"
@@ -13,14 +14,11 @@
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
                    projectFiles="true">
-      <logicalFolder name="Unity" displayName="Unity" projectFiles="true">
-        <itemPath>Unity/unity.c</itemPath>
-        <itemPath>Unity/unity.h</itemPath>
-        <itemPath>Unity/unity_internals.h</itemPath>
-      </logicalFolder>
       <itemPath>Roller.c</itemPath>
       <itemPath>RollerTest.c</itemPath>
       <itemPath>main.c</itemPath>
+      <itemPath>unity.c</itemPath>
+      <itemPath>unity_fixture.c</itemPath>
     </logicalFolder>
     <logicalFolder name="TestFiles"
                    displayName="Test Files"
@@ -58,13 +56,13 @@
       </item>
       <item path="RollerTest.c" ex="false" tool="0" flavor2="0">
       </item>
-      <item path="Unity/unity.c" ex="false" tool="0" flavor2="0">
-      </item>
-      <item path="Unity/unity.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="Unity/unity_internals.h" ex="false" tool="3" flavor2="0">
-      </item>
       <item path="main.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="unity.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="unity_fixture.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="unity_fixture.h" ex="false" tool="3" flavor2="0">
       </item>
     </conf>
     <conf name="Release" type="1">
@@ -93,13 +91,13 @@
       </item>
       <item path="RollerTest.c" ex="false" tool="0" flavor2="0">
       </item>
-      <item path="Unity/unity.c" ex="false" tool="0" flavor2="0">
-      </item>
-      <item path="Unity/unity.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="Unity/unity_internals.h" ex="false" tool="3" flavor2="0">
-      </item>
       <item path="main.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="unity.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="unity_fixture.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="unity_fixture.h" ex="false" tool="3" flavor2="0">
       </item>
     </conf>
   </confs>

@@ -1,11 +1,27 @@
-#include "Unity/unity.h"
+#include "unity_fixture.h"
 
-void TestDisplayEmptyBuffer(void)){
+TEST_GROUP(RollerTests);
+
+TEST_SETUP(RollerTests)
+{
+}
+
+TEST_TEAR_DOWN(RollerTests)
+{
+}
+
+TEST_GROUP_RUNNER(RollerTests)
+{
+    RUN_TEST_CASE(RollerTests, TestDisplayEmptyBuffer);
+}
+
+TEST(RollerTests,TestDisplayEmptyBuffer){
     char *expected = "      ";
     char *found = "H";
     TEST_ASSERT_EQUAL_STRING(expected, found);
 }
-/*
+
+ /*
     
 TEST(RollerTests,TestDisplayAddCaracter){
     TEST_FAIL_MESSAGE("TODO");
@@ -44,19 +60,3 @@ TEST(RollerTests,testDisplayRolledAddCaracter){
        
 }
 */
-
-TEST_GROUP_RUNNER(RollerTests)
-{
-  RUN_TEST_CASE(RollerTests, TestDisplayEmptyBuffer);
-}
-
-TEST_SETUP(RollerTests)
-{
-  /* do test setup */
-}
-
-
-TEST_TEAR_DOWN(RollerTests)
-{
-  /* do test tear down */
-}

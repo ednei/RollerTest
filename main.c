@@ -4,17 +4,15 @@
  *
  * Created on December 23, 2013, 9:22 AM
  */
+#include "unity_fixture.h"
 
-#include <stdio.h>
-#include <stdlib.h>
-#include "Unity/unity.h"
-
-/*
- * 
- */
-int main(int argc, char** argv) {
-    
+static void runAllTests()
+{
     RUN_TEST_GROUP(RollerTests);
-    return (EXIT_SUCCESS);
+}
+
+
+int main(int argc, char** argv) {
+    return UnityMain(argc, argv, runAllTests);    
 }
 
