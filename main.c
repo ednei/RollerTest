@@ -9,6 +9,7 @@
 static void runAllTests()
 {
     RUN_TEST_GROUP(RollerTests);
+    RUN_TEST_GROUP(CircularBufferTests);
 }
 
 

@@ -4,6 +4,7 @@
     <logicalFolder name="HeaderFiles"
                    displayName="Header Files"
                    projectFiles="true">
+      <itemPath>CircularBuffer.h</itemPath>
       <itemPath>Roller.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ResourceFiles"
@@ -22,6 +23,8 @@
         <itemPath>Unity/unity_fixture_malloc_overrides.h</itemPath>
         <itemPath>Unity/unity_internals.h</itemPath>
       </logicalFolder>
+      <itemPath>CircularBuffer.c</itemPath>
+      <itemPath>CircularBufferTest.c</itemPath>
       <itemPath>Roller.c</itemPath>
       <itemPath>RollerTest.c</itemPath>
       <itemPath>main.c</itemPath>
@@ -51,11 +54,24 @@
       </toolsSet>
       <compileType>
         <cTool>
+          <standard>3</standard>
           <incDir>
             <pElem>Unity</pElem>
+            <pElem>.</pElem>
           </incDir>
         </cTool>
+        <ccTool>
+          <incDir>
+            <pElem>.</pElem>
+          </incDir>
+        </ccTool>
       </compileType>
+      <item path="CircularBuffer.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="CircularBuffer.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="CircularBufferTest.c" ex="false" tool="0" flavor2="0">
+      </item>
       <item path="Roller.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="Roller.h" ex="false" tool="3" flavor2="0">
@@ -91,9 +107,15 @@
       <compileType>
         <cTool>
           <developmentMode>5</developmentMode>
+          <incDir>
+            <pElem>.</pElem>
+          </incDir>
         </cTool>
         <ccTool>
           <developmentMode>5</developmentMode>
+          <incDir>
+            <pElem>.</pElem>
+          </incDir>
         </ccTool>
         <fortranCompilerTool>
           <developmentMode>5</developmentMode>
@@ -102,6 +124,12 @@
           <developmentMode>5</developmentMode>
         </asmTool>
       </compileType>
+      <item path="CircularBuffer.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="CircularBuffer.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="CircularBufferTest.c" ex="false" tool="0" flavor2="0">
+      </item>
       <item path="Roller.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="Roller.h" ex="false" tool="3" flavor2="0">

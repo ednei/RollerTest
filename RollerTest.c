@@ -1,9 +1,14 @@
+#include "Roller.h"
 #include "unity_fixture.h"
+#include <string.h>
+
+char *expected;
 
 TEST_GROUP(RollerTests);
 
 TEST_SETUP(RollerTests)
 {
+    expected="";
 }
 
 TEST_TEAR_DOWN(RollerTests)
@@ -24,10 +29,16 @@ TEST_GROUP_RUNNER(RollerTests)
     RUN_TEST_CASE(RollerTests,testDisplayRolledAddCaracter);
 }
 
+static void SetExpectedString(char *value){
+    TEST_ASSERT_MESSAGE(strlen(value)<=ROLLER_DYSPLAYLENGHT,"Expected message has a invalid size, this test is not well wrote");
+    TEST_ASSERT_MESSAGE(strlen(value)>0,"Expected message has a invalid size, this test is not well wrote");
+    expected=value;
+}
+
 TEST(RollerTests,TestDisplayEmptyBuffer){
-    char *expected = "      ";
-    char *found = "H";
-    TEST_ASSERT_EQUAL_STRING(expected, found);
+    SetExpectedString("      ");
+    Roller_Init();
+    TEST_ASSERT_EQUAL_STRING(expected, ROLLER_GetDisplayData());
 }
     
 TEST(RollerTests,TestDisplayAddCaracter){

@@ -9,6 +9,12 @@
 #define	ROLLER_H
 
 
+#define ROLLER_DYSPLAYLENGHT 6
+#define ROLLER_MAXCARACTER 1000
+
+void Roller_Init();
+char* ROLLER_GetDisplayData();
+
 
 #endif	/* ROLLER_H */
 
