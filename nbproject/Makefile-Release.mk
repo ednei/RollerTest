@@ -37,9 +37,9 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 OBJECTFILES= \
 	${OBJECTDIR}/Roller.o \
 	${OBJECTDIR}/RollerTest.o \
-	${OBJECTDIR}/main.o \
-	${OBJECTDIR}/unity.o \
-	${OBJECTDIR}/unity_fixture.o
+	${OBJECTDIR}/Unity/unity.o \
+	${OBJECTDIR}/Unity/unity_fixture.o \
+	${OBJECTDIR}/main.o
 
 
 # C Compiler Flags
@@ -76,20 +76,20 @@ ${OBJECTDIR}/RollerTest.o: RollerTest.c
 	${RM} "$@.d"
 	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/RollerTest.o RollerTest.c
 
+${OBJECTDIR}/Unity/unity.o: Unity/unity.c 
+	${MKDIR} -p ${OBJECTDIR}/Unity
+	${RM} "$@.d"
+	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Unity/unity.o Unity/unity.c
+
+${OBJECTDIR}/Unity/unity_fixture.o: Unity/unity_fixture.c 
+	${MKDIR} -p ${OBJECTDIR}/Unity
+	${RM} "$@.d"
+	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Unity/unity_fixture.o Unity/unity_fixture.c
+
 ${OBJECTDIR}/main.o: main.c 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/main.o main.c
-
-${OBJECTDIR}/unity.o: unity.c 
-	${MKDIR} -p ${OBJECTDIR}
-	${RM} "$@.d"
-	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/unity.o unity.c
-
-${OBJECTDIR}/unity_fixture.o: unity_fixture.c 
-	${MKDIR} -p ${OBJECTDIR}
-	${RM} "$@.d"
-	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/unity_fixture.o unity_fixture.c
 
 # Subprojects
 .build-subprojects:
