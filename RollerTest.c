@@ -38,11 +38,13 @@ static void SetExpectedString(char *value){
 TEST(RollerTests,TestDisplayEmptyBuffer){
     SetExpectedString("      ");
     Roller_Init();
-    TEST_ASSERT_EQUAL_STRING(expected, ROLLER_GetDisplayData());
+    TEST_ASSERT_EQUAL_STRING(expected, Roller_GetDisplayData());
 }
     
 TEST(RollerTests,TestDisplayAddCaracter){
-    TEST_FAIL_MESSAGE("TODO");
+    SetExpectedString("H");
+    Roller_AddCaracter("H");
+    TEST_ASSERT_EQUAL_STRING(expected, Roller_GetDisplayData());
 }
 
 TEST(RollerTests,TestDisplayFullAddCaracter){

@@ -3,14 +3,26 @@
 #include <stdint.h>
 
 #include "Roller.h"
+#include "CircularBuffer.h"
 
+typedef struct Roller_t{
+   char displayData[ROLLER_DYSPLAYLENGHT];
+   CircularBuffer circularBuffer;
+   uint8_t buffer[ROLLER_MAXCARACTER];
+} Roller;
 
-static char _displayData[ROLLER_DYSPLAYLENGHT];
+static Roller roller;
 
 void Roller_Init(){
-    memset(_displayData,' ',ROLLER_DYSPLAYLENGHT);
+    memset(roller.displayData,' ',ROLLER_DYSPLAYLENGHT);
+    CircularBuffer_Init(&roller.circularBuffer,roller.buffer,ROLLER_MAXCARACTER);
 }
 
-char* ROLLER_GetDisplayData(){
-    return _displayData;
+char* Roller_GetDisplayData(){
+    return roller.displayData;
+}
+
+void Roller_AddCaracter(char caracter){
+    CircularBuffer_Add(&roller.circularBuffer,caracter);
+    
 }
