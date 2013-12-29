@@ -13,8 +13,10 @@
 
 
 void Roller_Init();
-char* Roller_GetDisplayData();
+void Roller_GetDisplayData(char *displayData);
 void Roller_AddCaracter(char caracter);
+void Roller_RollLeft(void);
+void Roller_RollRight(void);
 
 
 #endif	/* ROLLER_H */

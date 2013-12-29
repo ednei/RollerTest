@@ -32,12 +32,12 @@ TEST_TEAR_DOWN(CircularBufferTests) {
 TEST(CircularBufferTests, TestCircularBuffer_Init) {
     TEST_ASSERT_EQUAL_UINT16(CircularBufferCapacity, circularBuffer.capacity);
     TEST_ASSERT_NOT_EQUAL(0, circularBuffer.buffer);
-    TEST_ASSERT_EQUAL_UINT16(0, circularBuffer.firstAvaliable);
-    TEST_ASSERT_EQUAL_UINT16(CIRCULAR_BUFFER_EMPTY, circularBuffer.firstValid);
+    TEST_ASSERT_EQUAL_UINT16(0, circularBuffer.count);
+    TEST_ASSERT_EQUAL_UINT16(0, circularBuffer.firstValid);
 }
 
 TEST(CircularBufferTests, TestCircularBuffer_SimpleAdd) {
-    char *test = "test";
+    char *test = "abcd";
     for (int c = 0; c < CircularBufferCapacity; c++) {
         CircularBuffer_Add(&circularBuffer, test[c]);
         TEST_ASSERT_EQUAL_UINT16(test[c], CircularBuffer_Get(&circularBuffer, c));

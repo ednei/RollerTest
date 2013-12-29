@@ -3,11 +3,14 @@
 #include <string.h>
 
 char *expected;
+char displayData[ROLLER_DYSPLAYLENGHT];
+    
 
 TEST_GROUP(RollerTests);
 
 TEST_SETUP(RollerTests)
 {
+    Roller_Init();
     expected="";
 }
 
@@ -37,14 +40,22 @@ static void SetExpectedString(char *value){
 
 TEST(RollerTests,TestDisplayEmptyBuffer){
     SetExpectedString("      ");
-    Roller_Init();
-    TEST_ASSERT_EQUAL_STRING(expected, Roller_GetDisplayData());
+    Roller_GetDisplayData(displayData);
+    TEST_ASSERT_EQUAL_STRING(expected,displayData);
 }
     
 TEST(RollerTests,TestDisplayAddCaracter){
-    SetExpectedString("H");
-    Roller_AddCaracter("H");
-    TEST_ASSERT_EQUAL_STRING(expected, Roller_GetDisplayData());
+    SetExpectedString("H     ");
+    Roller_AddCaracter('H');
+    Roller_GetDisplayData(displayData);
+    printf("%s \n", displayData);
+    for(int c=0;c<ROLLER_DYSPLAYLENGHT;c++){
+        Roller_RollRight();
+        Roller_GetDisplayData(displayData);
+        printf("%s \n", displayData);
+    }
+    
+    TEST_ASSERT_EQUAL_STRING(expected,displayData);
 }
 
 TEST(RollerTests,TestDisplayFullAddCaracter){
