@@ -47,13 +47,30 @@ TEST(RollerTests,TestDisplayEmptyBuffer){
 TEST(RollerTests,TestDisplayAddCaracter){
     SetExpectedString("H     ");
     Roller_AddCaracter('H');
-    Roller_GetDisplayData(displayData);
+    Roller_AddCaracter('E');
+    //Roller_AddCaracter('L');
+    //Roller_AddCaracter('L');
+    //Roller_AddCaracter('O');
+    //Roller_AddCaracter(' ');
+    //Roller_AddCaracter('W');
+    //Roller_AddCaracter('O');
+    //Roller_GetDisplayData(displayData);
     printf("%s \n", displayData);
+    
+    /*
     for(int c=0;c<ROLLER_DYSPLAYLENGHT;c++){
         Roller_RollRight();
         Roller_GetDisplayData(displayData);
         printf("%s \n", displayData);
     }
+    */
+    
+    for(int c=0;c<8;c++){
+        Roller_RollLeft();
+        Roller_GetDisplayData(displayData);
+        printf("%s \n", displayData);
+    }
+    
     
     TEST_ASSERT_EQUAL_STRING(expected,displayData);
 }
