@@ -1,14 +1,15 @@
 
 #include <string.h>
 #include <stdint.h>
-#include <stdio.h>
+//#include <stdio.h>
 
 #include "Roller.h"
 #include "CircularBuffer.h"
 
-uint16_t displayPosition;
-CircularBuffer circularBuffer;
-uint8_t buffer[ROLLER_MAXCARACTER];
+//Roller private variables and functions
+static uint16_t displayPosition;
+static CircularBuffer circularBuffer;
+static uint8_t buffer[ROLLER_MAXCARACTER];
 
 static uint16_t GetMaxDisplayRange(void);
 

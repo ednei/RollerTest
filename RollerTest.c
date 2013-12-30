@@ -1,11 +1,15 @@
-#include "Roller.h"
 #include "unity_fixture.h"
 #include <string.h>
 #include <stdint.h>
 
-char displayData[ROLLER_DYSPLAYLENGHT];
+#include "Roller.h"
 
-uint8_t verbose;
+static char displayData[ROLLER_DYSPLAYLENGHT];
+static uint8_t verbose;
+
+static void CheckDisplayData(char *expected);
+static void AddHelloToRoller();
+static void AddHelloWorldToRoller();
 
 TEST_GROUP(RollerTests);
 

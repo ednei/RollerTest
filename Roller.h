@@ -8,8 +8,13 @@
 #ifndef ROLLER_H
 #define	ROLLER_H
 
-#define ROLLER_DYSPLAYLENGHT 6
-#define ROLLER_MAXCARACTER 1000
+#ifndef ROLLER_DYSPLAYLENGHT
+        #define ROLLER_DYSPLAYLENGHT 6
+#endif
+
+#ifndef ROLLER_MAXCARACTER
+        #define ROLLER_MAXCARACTER 1000
+#endif
 
 
 void Roller_Init();
