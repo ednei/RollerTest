@@ -25,27 +25,14 @@ void Roller_GetDisplayData(char *displayData) {
     //strcpy(destination, displayData);
     uint16_t copyPosition;
     uint16_t maxDisplayRange = GetMaxDisplayRange();
+    uint16_t bufferCount = CircularBuffer_Count(&circularBuffer);
     for (int c = 0; c < ROLLER_DYSPLAYLENGHT; c++) {
         copyPosition = displayPosition + c;
-        printf("[%u,%u]", copyPosition, displayPosition);
-        /*
-        if (copyPosition < CircularBuffer_Count(&circularBuffer)) {
-            displayData[c] = CircularBuffer_Get(&circularBuffer,
-                    copyPosition);
-        } else {
-            if (copyPosition < MAX_DISPLAY_RANGE) {
-                displayData[c] = '*';
-            } else {
-                copyPosition = copyPosition - MAX_DISPLAY_RANGE;
-                displayData[c] = CircularBuffer_Get(&circularBuffer,
-                        copyPosition);
-            }
-        }
-         */
+        //printf("[%u,%u]", copyPosition, displayPosition);
         if (copyPosition >= maxDisplayRange) {
             copyPosition = copyPosition - maxDisplayRange;
         }
-        if (copyPosition < CircularBuffer_Count(&circularBuffer)) {
+        if (copyPosition < bufferCount) {
             displayData[c] = CircularBuffer_Get(&circularBuffer,
                     copyPosition);
         } else {
@@ -56,14 +43,18 @@ void Roller_GetDisplayData(char *displayData) {
 
 void Roller_AddCaracter(char caracter) {
     CircularBuffer_Add(&circularBuffer, caracter);
+    uint16_t bufferCount= CircularBuffer_Count(&circularBuffer);
+    if(bufferCount >= ROLLER_DYSPLAYLENGHT){
+        displayPosition = bufferCount - ROLLER_DYSPLAYLENGHT;
+    }
 }
 
 static uint16_t GetMaxDisplayRange(void){
     uint16_t bufferCount= CircularBuffer_Count(&circularBuffer);
-    if(bufferCount<ROLLER_DYSPLAYLENGHT){
+    if(bufferCount==1){
         return ROLLER_DYSPLAYLENGHT;
     }else{
-        return bufferCount+ROLLER_DYSPLAYLENGHT;
+        return bufferCount+ROLLER_DYSPLAYLENGHT-2;//Fist and last caracters are always visible;
     }
 }
 
@@ -71,7 +62,7 @@ void Roller_RollLeft(void) {
     if (displayPosition < GetMaxDisplayRange()) {
         displayPosition++;
     } else {
-        displayPosition = 0;
+        displayPosition = 1;
     }
 }
 
