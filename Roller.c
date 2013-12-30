@@ -6,23 +6,18 @@
 #include "Roller.h"
 #include "CircularBuffer.h"
 
-#define MAX_DISPLAY_RANGE (2*ROLLER_DYSPLAYLENGHT-2)
-
 uint16_t displayPosition;
-//char displayData[ROLLER_DYSPLAYLENGHT];
 CircularBuffer circularBuffer;
 uint8_t buffer[ROLLER_MAXCARACTER];
 
 static uint16_t GetMaxDisplayRange(void);
 
 void Roller_Init() {
-    //memset(displayData, ' ', ROLLER_DYSPLAYLENGHT);
     displayPosition = 0;
     CircularBuffer_Init(&circularBuffer, buffer, ROLLER_MAXCARACTER);
 }
 
 void Roller_GetDisplayData(char *displayData) {
-    //strcpy(destination, displayData);
     uint16_t copyPosition;
     uint16_t maxDisplayRange = GetMaxDisplayRange();
     uint16_t bufferCount = CircularBuffer_Count(&circularBuffer);
@@ -54,7 +49,8 @@ static uint16_t GetMaxDisplayRange(void){
     if(bufferCount==1){
         return ROLLER_DYSPLAYLENGHT;
     }else{
-        return bufferCount+ROLLER_DYSPLAYLENGHT-2;//Fist and last caracters are always visible;
+        //First and last characters are always visible;
+        return bufferCount+ROLLER_DYSPLAYLENGHT-2;
     }
 }
 
