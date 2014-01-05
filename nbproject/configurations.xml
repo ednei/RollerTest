@@ -4,8 +4,6 @@
     <logicalFolder name="HeaderFiles"
                    displayName="Header Files"
                    projectFiles="true">
-      <itemPath>CircularBuffer.h</itemPath>
-      <itemPath>Roller.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ResourceFiles"
                    displayName="Resource Files"
@@ -14,6 +12,12 @@
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
                    projectFiles="true">
+      <logicalFolder name="appLogic" displayName="appLogic" projectFiles="true">
+        <itemPath>../Roller/src/appLogic/CircularBuffer.c</itemPath>
+        <itemPath>../Roller/src/appLogic/CircularBuffer.h</itemPath>
+        <itemPath>../Roller/src/appLogic/Roller.c</itemPath>
+        <itemPath>../Roller/src/appLogic/Roller.h</itemPath>
+      </logicalFolder>
       <logicalFolder name="Unity" displayName="Unity" projectFiles="true">
         <itemPath>Unity/unity.c</itemPath>
         <itemPath>Unity/unity.h</itemPath>
@@ -23,9 +27,7 @@
         <itemPath>Unity/unity_fixture_malloc_overrides.h</itemPath>
         <itemPath>Unity/unity_internals.h</itemPath>
       </logicalFolder>
-      <itemPath>CircularBuffer.c</itemPath>
       <itemPath>CircularBufferTest.c</itemPath>
-      <itemPath>Roller.c</itemPath>
       <itemPath>RollerTest.c</itemPath>
       <itemPath>main.c</itemPath>
     </logicalFolder>
@@ -43,6 +45,7 @@
   </logicalFolder>
   <sourceRootList>
     <Elem>Unity</Elem>
+    <Elem>../Roller/src/appLogic</Elem>
   </sourceRootList>
   <projectmakefile>Makefile</projectmakefile>
   <confs>
@@ -66,15 +69,21 @@
           </incDir>
         </ccTool>
       </compileType>
-      <item path="CircularBuffer.c" ex="false" tool="0" flavor2="0">
+      <item path="../Roller/src/appLogic/CircularBuffer.c"
+            ex="false"
+            tool="0"
+            flavor2="0">
       </item>
-      <item path="CircularBuffer.h" ex="false" tool="3" flavor2="0">
+      <item path="../Roller/src/appLogic/CircularBuffer.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../Roller/src/appLogic/Roller.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="../Roller/src/appLogic/Roller.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="CircularBufferTest.c" ex="false" tool="0" flavor2="0">
-      </item>
-      <item path="Roller.c" ex="false" tool="0" flavor2="0">
-      </item>
-      <item path="Roller.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="RollerTest.c" ex="false" tool="0" flavor2="0">
       </item>
@@ -124,15 +133,21 @@
           <developmentMode>5</developmentMode>
         </asmTool>
       </compileType>
-      <item path="CircularBuffer.c" ex="false" tool="0" flavor2="0">
+      <item path="../Roller/src/appLogic/CircularBuffer.c"
+            ex="false"
+            tool="0"
+            flavor2="0">
       </item>
-      <item path="CircularBuffer.h" ex="false" tool="3" flavor2="0">
+      <item path="../Roller/src/appLogic/CircularBuffer.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../Roller/src/appLogic/Roller.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="../Roller/src/appLogic/Roller.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="CircularBufferTest.c" ex="false" tool="0" flavor2="0">
-      </item>
-      <item path="Roller.c" ex="false" tool="0" flavor2="0">
-      </item>
-      <item path="Roller.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="RollerTest.c" ex="false" tool="0" flavor2="0">
       </item>

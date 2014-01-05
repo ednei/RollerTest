@@ -2,7 +2,7 @@
 #include <string.h>
 #include <stdint.h>
 
-#include "Roller.h"
+#include "../Roller/src/appLogic/Roller.h"
 
 static char displayData[ROLLER_DYSPLAYLENGHT];
 static uint8_t verbose;
@@ -244,7 +244,8 @@ TEST(RollerTests,TestDisplayFullRollRight){
 TEST(RollerTests,testDisplayRolledAddCaracter){
     //verbose =1;
     AddHelloWorldToRoller();
-    Roller_RollRight();
+    //Roller_RollRight();
+    Roller_AddCaracter(ROLL_RIGHT_CHARATER);
     CheckDisplayData("O#WORL");
     Roller_RollRight();
     CheckDisplayData("LO#WOR");
